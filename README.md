@@ -130,7 +130,3 @@ Built by Aigerim as a portfolio project demonstrating:
 - Healthcare data standards (LOINC)
 - dbt transformations and documentation
 - Time-series data modeling
-
-## 📝 License
-
-MIT
