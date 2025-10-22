@@ -1,0 +1,12 @@
+health_tracker_analytics:
+  target: dev
+  outputs:
+    dev:
+      type: postgres
+      host: localhost
+      port: 5432
+      user: your_username
+      password: your_password
+      dbname: health_tracker
+      schema: analytics
+      threads: 4

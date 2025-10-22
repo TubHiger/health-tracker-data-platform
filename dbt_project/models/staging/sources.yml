@@ -1,0 +1,68 @@
+version: 2
+
+sources:
+  - name: public
+    schema: public
+    description: Raw tables from health_tracker database
+    tables:
+      - name: users
+        description: User accounts
+        columns:
+          - name: user_id
+            description: Primary key
+            tests:
+              - unique
+              - not_null
+          - name: email
+            description: User email address
+            tests:
+              - unique
+              - not_null
+
+      - name: blood_tests
+        description: Blood test metadata and uploads
+        columns:
+          - name: test_id
+            description: Primary key
+            tests:
+              - unique
+              - not_null
+          - name: user_id
+            description: Foreign key to users
+            tests:
+              - not_null
+              - relationships:
+                  to: source('public', 'users')
+                  field: user_id
+
+      - name: biomarkers
+        description: Individual biomarker results
+        columns:
+          - name: biomarker_id
+            description: Primary key
+            tests:
+              - unique
+              - not_null
+          - name: test_id
+            description: Foreign key to blood_tests
+            tests:
+              - not_null
+              - relationships:
+                  to: source('public', 'blood_tests')
+                  field: test_id
+
+      - name: biomarker_types
+        description: Standardized biomarker definitions with LOINC
+        columns:
+          - name: biomarker_type_id
+            description: Primary key
+            tests:
+              - unique
+              - not_null
+          - name: loinc_code
+            description: Official LOINC code
+            tests:
+              - unique
+
+      - name: biomarker_mappings
+        description: AI-learned mappings from raw names to types
