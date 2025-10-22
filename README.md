@@ -120,7 +120,8 @@ dbt docs serve
 
 ## 📸 Data Lineage
 
-[Screenshot of dbt lineage diagram]
+<img width="1503" height="709" alt="Screenshot 2025-10-21 at 10 22 47 PM" src="https://github.com/user-attachments/assets/c983dc45-d760-4dd9-b040-6e1431a22b9a" />
+
 
 ## 👤 Author
 
