@@ -124,7 +124,7 @@ dbt docs serve
 
 ## 👤 Author
 
-Built by [Your Name] as a portfolio project demonstrating:
+Built by Aigerim as a portfolio project demonstrating:
 - Database design and normalization
 - Healthcare data standards (LOINC)
 - dbt transformations and documentation
